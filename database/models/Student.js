@@ -15,23 +15,6 @@ const Student = db.define("student", {
   lastname: {
     type: Sequelize.STRING,
     allowNull: false
-  },
-  email: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  imageUrl: {
-    type: Sequelize.STRING,
-    allowNull: true,
-    defaultValue: 'https://static.vecteezy.com/system/resources/thumbnails/000/511/962/small/57_Student.jpg' 
-  },
-  gpa: {
-    type: Sequelize.DECIMAL(3, 1),
-    allowNull: true,
-    validate: {
-      min: 0.0,
-      max: 4.0
-    }
   }
 });
 

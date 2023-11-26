@@ -20,14 +20,7 @@ const Campus = db.define("campus", {
 
   description: {
     type: Sequelize.STRING,
-  },
-  
-
-  imageUrl: {
-    type: Sequelize.STRING,
-    allowNull: true, 
-    defaultValue: 'https://static01.nyt.com/images/2020/03/14/upshot/14up-colleges-remote/14up-colleges-remote-videoSixteenByNineJumbo1600.jpg'
-  },
+  }
 });
 
 // Export the campus model
