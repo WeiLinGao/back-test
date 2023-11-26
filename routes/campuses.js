@@ -14,15 +14,15 @@ const { Student, Campus } = require('../database/models');
 const ash = require('express-async-handler');
 
 /* GET ALL CAMPUSES: async/await using "try-catch" */
-// router.get('/', async (req, res, next) => {
-//   try {
-//     let campuses = await Campus.findAll({include: [Student]});
-//     res.status(200).json(campuses);
-//   } 
-//   catch(err) {
-//     next(err);
-//   }
-// });
+router.get('/', async (req, res, next) => {
+   try {
+     let campuses = await Campus.findAll({include: [Student]});
+    res.status(200).json(campuses);
+   } 
+  catch(err) {
+     next(err);
+   }
+ });
 
 /* GET ALL CAMPUSES */
 router.get('/', ash(async(req, res) => {
@@ -37,7 +37,7 @@ router.get('/:id', ash(async(req, res) => {
   res.status(200).json(campus);  // Status code 200 OK - request succeeded
 }));
 
-/* DELETE CAMPUS */
+/*DELETE CAMPUS*/
 router.delete('/:id', ash(async(req, res) => {
   await Campus.destroy({
     where: {
@@ -47,7 +47,7 @@ router.delete('/:id', ash(async(req, res) => {
   res.status(200).json("Deleted a campus!");
 }));
 
-/* ADD NEW CAMPUS */
+/*ADD NEW CAMPUS */
 router.post('/', ash(async(req, res) => {
   let newCampus = await Campus.create(req.body);
   res.status(200).json(newCampus);  // Status code 200 OK - request succeeded
