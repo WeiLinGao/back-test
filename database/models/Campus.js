@@ -20,7 +20,14 @@ const Campus = db.define("campus", {
 
   description: {
     type: Sequelize.STRING,
-  }
+  },
+
+  imageUrl: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    defaultValue: 'defaultImageUrl.jpg', // Set a default value if needed
+  },
+
 });
 
 // Export the campus model

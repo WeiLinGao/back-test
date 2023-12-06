@@ -15,7 +15,13 @@ const Student = db.define("student", {
   lastname: {
     type: Sequelize.STRING,
     allowNull: false
-  }
+  },
+  imageUrl: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    defaultValue: 'defaultImageUrl.jpg', // Set a default value if needed
+  },
+
 });
 
 // Export the student model
