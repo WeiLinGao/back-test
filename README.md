@@ -1,4 +1,5 @@
-# server-starter-code
+#Final Project- Back End
 
-This repository is the server (back-end) starter code for Final Project - Full-Stack CRUD Application.
+Group member:
 
+Weilin Gao- WeiLinGao
